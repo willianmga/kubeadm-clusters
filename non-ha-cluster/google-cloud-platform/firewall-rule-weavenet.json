@@ -3,35 +3,6 @@
     {
       "IPProtocol": "tcp",
       "ports": [
-        "6443",
-        "2379-2380",
-        "10250",
-        "10259",
-        "10257",
-        "30000-32767"
-      ]
-    }
-  ],
-  "description": "",
-  "direction": "INGRESS",
-  "disabled": false,
-  "enableLogging": false,
-  "kind": "compute#firewall",
-  "logConfig": {
-    "enable": false
-  },
-  "name": "kube-internal-traffic",
-  "priority": 65534,
-  "sourceRanges": [
-    "10.128.0.0/9"
-  ]
-}
-
-{
-  "allowed": [
-    {
-      "IPProtocol": "tcp",
-      "ports": [
         "6783"
       ]
     },
@@ -47,12 +18,15 @@
   "direction": "INGRESS",
   "disabled": false,
   "enableLogging": false,
+  "id": "",
   "kind": "compute#firewall",
   "logConfig": {
     "enable": false
   },
   "name": "kube-weavenet-cni",
+  "network": "projects/XYZ_PROJECT/global/networks/kubernetes-cluster",
   "priority": 65534,
+  "selfLink": "projects/XYZ_PROJECT/global/firewalls/kube-weavenet-cni",
   "sourceRanges": [
     "10.128.0.0/9"
   ]

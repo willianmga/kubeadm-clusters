@@ -1,0 +1,31 @@
+{
+  "allowed": [
+    {
+      "IPProtocol": "tcp",
+      "ports": [
+        "6443",
+        "2379-2380",
+        "10250",
+        "10259",
+        "10257",
+        "30000-32767"
+      ]
+    }
+  ],
+  "description": "",
+  "direction": "INGRESS",
+  "disabled": false,
+  "enableLogging": false,
+  "id": "",
+  "kind": "compute#firewall",
+  "logConfig": {
+    "enable": false
+  },
+  "name": "kube-internal-traffic",
+  "network": "projects/XYZ_PROJECT/global/networks/kubernetes-cluster",
+  "priority": 65534,
+  "selfLink": "projects/XYZ_PROJECT/global/firewalls/kube-internal-traffic",
+  "sourceRanges": [
+    "10.128.0.0/9"
+  ]
+}

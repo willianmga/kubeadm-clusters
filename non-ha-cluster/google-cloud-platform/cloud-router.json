@@ -1,0 +1,37 @@
+{
+  "bgp": {
+    "keepaliveInterval": 20,
+    "asn": 0,
+    "advertiseMode": "DEFAULT"
+  },
+  "description": "",
+  "encryptedInterconnectRouter": false,
+  "id": "",
+  "kind": "compute#router",
+  "name": "kubernetes-cluster",
+  "nats": [
+    {
+      "natIpAllocateOption": "AUTO_ONLY",
+      "name": "kubernetes-cluster",
+      "udpIdleTimeoutSec": 30,
+      "tcpTimeWaitTimeoutSec": 120,
+      "icmpIdleTimeoutSec": 30,
+      "tcpTransitoryIdleTimeoutSec": 30,
+      "endpointTypes": [
+        "ENDPOINT_TYPE_VM"
+      ],
+      "minPortsPerVm": 64,
+      "logConfig": {
+        "enable": false,
+        "filter": "ALL"
+      },
+      "tcpEstablishedIdleTimeoutSec": 1200,
+      "enableEndpointIndependentMapping": false,
+      "autoNetworkTier": "PREMIUM",
+      "sourceSubnetworkIpRangesToNat": "ALL_SUBNETWORKS_ALL_IP_RANGES"
+    }
+  ],
+  "network": "projects/XYZ_PROJECT/global/networks/kubernetes-cluster",
+  "region": "projects/XYZ_PROJECT/regions/europe-west2",
+  "selfLink": "projects/XYZ_PROJECT/regions/europe-west2/routers/kubernetes-cluster"
+}

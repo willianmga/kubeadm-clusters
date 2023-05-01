@@ -1,0 +1,128 @@
+{
+  "description": "This instance group is controlled by Regional Instance Group Manager 'kube-worker-ig'. To modify instances in this group, use the Regional Instance Group Manager API: https://cloud.google.com/compute/docs/reference/latest/regionInstanceGroupManagers",
+  "fingerprint": "=",
+  "id": "",
+  "kind": "compute#instanceGroup",
+  "name": "kube-worker-ig",
+  "network": "projects/XYZ_PROJECT/global/networks/kubernetes-cluster",
+  "region": "projects/XYZ_PROJECT/regions/europe-west2",
+  "selfLink": "projects/XYZ_PROJECT/regions/europe-west2/instanceGroups/kube-worker-ig",
+  "size": 3,
+  "subnetwork": "projects/XYZ_PROJECT/regions/europe-west2/subnetworks/kubernetes-cluster"
+}
+
+{
+  "baseInstanceName": "kube-worker-ig",
+  "currentActions": {
+    "abandoning": 0,
+    "none": 3,
+    "restarting": 0,
+    "creating": 0,
+    "verifying": 0,
+    "refreshing": 0,
+    "deleting": 0,
+    "stopping": 0,
+    "resuming": 0,
+    "starting": 0,
+    "recreating": 0,
+    "creatingWithoutRetries": 0,
+    "suspending": 0
+  },
+  "description": "",
+  "distributionPolicy": {
+    "zones": [
+      {
+        "zone": "projects/XYZ_PROJECT/zones/europe-west2-c"
+      },
+      {
+        "zone": "projects/XYZ_PROJECT/zones/europe-west2-b"
+      },
+      {
+        "zone": "projects/XYZ_PROJECT/zones/europe-west2-a"
+      }
+    ],
+    "targetShape": "EVEN"
+  },
+  "fingerprint": "",
+  "id": "",
+  "instanceGroup": "projects/XYZ_PROJECT/regions/europe-west2/instanceGroups/kube-worker-ig",
+  "instanceLifecyclePolicy": {
+    "forceUpdateOnRepair": "NO"
+  },
+  "instanceTemplate": "projects/XYZ_PROJECT/global/instanceTemplates/kube-vm",
+  "kind": "compute#instanceGroupManager",
+  "listManagedInstancesResults": "PAGELESS",
+  "name": "kube-worker-ig",
+  "region": "projects/XYZ_PROJECT/regions/europe-west2",
+  "selfLink": "projects/XYZ_PROJECT/regions/europe-west2/instanceGroupManagers/kube-worker-ig",
+  "serviceAccount": "171398459786@cloudservices.gserviceaccount.com",
+  "status": {
+    "autoscaler": "https://www.googleapis.com/compute/beta/projects/XYZ_PROJECT/regions/europe-west2/autoscalers/kube-worker-ig",
+    "versionTarget": {
+      "isReached": true
+    },
+    "stateful": {
+      "perInstanceConfigs": {
+        "allEffective": true
+      },
+      "isStateful": false,
+      "hasStatefulConfig": false
+    },
+    "allInstancesConfig": {
+      "effective": true
+    },
+    "isStable": true
+  },
+  "targetSize": 3,
+  "updatePolicy": {
+    "instanceRedistributionType": "PROACTIVE",
+    "type": "OPPORTUNISTIC",
+    "minimalAction": "REPLACE",
+    "minReadySec": 0,
+    "replacementMethod": "SUBSTITUTE",
+    "maxSurge": {
+      "fixed": 3,
+      "calculated": 3
+    },
+    "maxUnavailable": {
+      "fixed": 3,
+      "calculated": 3
+    }
+  },
+  "versions": [
+    {
+      "instanceTemplate": "projects/XYZ_PROJECT/global/instanceTemplates/kube-vm",
+      "targetSize": {
+        "calculated": 3
+      }
+    }
+  ]
+}
+
+{
+  "autoscalingPolicy": {
+    "cpuUtilization": {
+      "predictiveMethod": "NONE",
+      "utilizationTarget": 0.6
+    },
+    "maxNumReplicas": 1,
+    "coolDownPeriodSec": 60,
+    "mode": "OFF",
+    "minNumReplicas": 1
+  },
+  "creationTimestamp": "2023-04-30T17:16:16.772-07:00",
+  "id": "",
+  "kind": "compute#autoscaler",
+  "name": "kube-worker-ig",
+  "recommendedSize": 1,
+  "region": "https://www.googleapis.com/compute/beta/projects/XYZ_PROJECT/regions/europe-west2",
+  "selfLink": "projects/XYZ_PROJECT/regions/europe-west2/autoscalers/kube-worker-ig",
+  "status": "ACTIVE",
+  "statusDetails": [
+    {
+      "type": "MIN_EQUALS_MAX",
+      "message": "The min_num_replicas is equal to max_num_replicas. This means the autoscaler cannot add or remove instances from the instance group. Make sure this is the correct setting."
+    }
+  ],
+  "target": "https://www.googleapis.com/compute/beta/projects/XYZ_PROJECT/regions/europe-west2/instanceGroupManagers/kube-worker-ig"
+}

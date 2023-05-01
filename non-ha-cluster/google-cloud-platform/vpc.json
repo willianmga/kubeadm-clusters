@@ -1,0 +1,17 @@
+{
+  "autoCreateSubnetworks": false,
+  "description": "",
+  "id": "",
+  "kind": "compute#network",
+  "mtu": 1460,
+  "name": "kubernetes-cluster",
+  "networkFirewallPolicyEnforcementOrder": "AFTER_CLASSIC_FIREWALL",
+  "routingConfig": {
+    "routingMode": "REGIONAL"
+  },
+  "selfLink": "projects/XYZ_PROJECT/global/networks/kubernetes-cluster",
+  "selfLinkWithId": "https://www.googleapis.com/compute/beta/projects/XYZ_PROJECT/global/networks/5491803289565530472",
+  "subnetworks": [
+    "projects/XYZ_PROJECT/regions/europe-west2/subnetworks/kubernetes-cluster"
+  ]
+}

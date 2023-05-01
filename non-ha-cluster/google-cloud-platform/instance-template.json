@@ -1,0 +1,68 @@
+{
+  "description": "",
+  "id": "",
+  "kind": "compute#instanceTemplate",
+  "name": "kube-vm",
+  "properties": {
+    "confidentialInstanceConfig": {
+      "enableConfidentialCompute": false
+    },
+    "description": "",
+    "scheduling": {
+      "onHostMaintenance": "MIGRATE",
+      "provisioningModel": "STANDARD",
+      "automaticRestart": true,
+      "preemptible": false
+    },
+    "tags": {},
+    "disks": [
+      {
+        "type": "PERSISTENT",
+        "deviceName": "kube-vm",
+        "autoDelete": true,
+        "index": 0,
+        "boot": true,
+        "kind": "compute#attachedDisk",
+        "mode": "READ_WRITE",
+        "initializeParams": {
+          "sourceImage": "projects/ubuntu-os-cloud/global/images/ubuntu-2204-jammy-v20230429",
+          "diskType": "pd-standard",
+          "diskSizeGb": "20"
+        }
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "stackType": "IPV4_ONLY",
+        "name": "nic0",
+        "network": "projects/XYZ_PROJECT/global/networks/kubernetes-cluster",
+        "subnetwork": "projects/XYZ_PROJECT/regions/europe-west2/subnetworks/kubernetes-cluster",
+        "kind": "compute#networkInterface"
+      }
+    ],
+    "reservationAffinity": {
+      "consumeReservationType": "ANY_RESERVATION"
+    },
+    "canIpForward": false,
+    "keyRevocationActionType": "NONE",
+    "machineType": "n1-standard-2",
+    "metadata": {
+      "fingerprint": "fUKLDm3xwgg=",
+      "kind": "compute#metadata"
+    },
+    "shieldedVmConfig": {
+      "enableSecureBoot": true,
+      "enableVtpm": true,
+      "enableIntegrityMonitoring": true
+    },
+    "shieldedInstanceConfig": {
+      "enableSecureBoot": true,
+      "enableVtpm": true,
+      "enableIntegrityMonitoring": true
+    },
+    "displayDevice": {
+      "enableDisplay": false
+    }
+  },
+  "selfLink": "projects/XYZ_PROJECT/global/instanceTemplates/kube-vm"
+}
