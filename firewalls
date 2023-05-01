@@ -1,0 +1,59 @@
+{
+  "allowed": [
+    {
+      "IPProtocol": "tcp",
+      "ports": [
+        "6443",
+        "2379-2380",
+        "10250",
+        "10259",
+        "10257",
+        "30000-32767"
+      ]
+    }
+  ],
+  "description": "",
+  "direction": "INGRESS",
+  "disabled": false,
+  "enableLogging": false,
+  "kind": "compute#firewall",
+  "logConfig": {
+    "enable": false
+  },
+  "name": "kube-internal-traffic",
+  "priority": 65534,
+  "sourceRanges": [
+    "10.128.0.0/9"
+  ]
+}
+
+{
+  "allowed": [
+    {
+      "IPProtocol": "tcp",
+      "ports": [
+        "6783"
+      ]
+    },
+    {
+      "IPProtocol": "udp",
+      "ports": [
+        "6783",
+        "6784"
+      ]
+    }
+  ],
+  "description": "Firewall rule for Weavenet CNI plugin",
+  "direction": "INGRESS",
+  "disabled": false,
+  "enableLogging": false,
+  "kind": "compute#firewall",
+  "logConfig": {
+    "enable": false
+  },
+  "name": "kube-weavenet-cni",
+  "priority": 65534,
+  "sourceRanges": [
+    "10.128.0.0/9"
+  ]
+}
