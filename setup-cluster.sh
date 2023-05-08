@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Remove controlplane node taint
+kubectl taint node kube-controlplane node-role.kubernetes.io/control-plane:NoSchedule-
+
 # Optimized for Kubernetes v1.17.1
 
 # WeaveNet CNI
