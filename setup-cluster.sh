@@ -11,3 +11,5 @@ kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/we
 # NGINX Ingress Controller v1.7.1 
 https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.7.1/deploy/static/provider/cloud/deploy.yaml
 
+# Metrics Server
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.6.3/components.yaml
